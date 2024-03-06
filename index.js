@@ -12,7 +12,7 @@ const words = [
     'сердце',
     'любовь',
     'кулак',
-    'пицца',
+    'лист'
 ]
 
 const man = [
@@ -44,17 +44,16 @@ submitBtn.addEventListener('click', () =>{
     if (playWord.includes(loweredCase)) {
         const index = playWord.indexOf(loweredCase)
         shadow[index] = playerInput.value
-        console.log(shadow)
         guessWord.innerHTML = shadow
         playerInput.value = ''
         if (!shadow.includes('*')) {
             alert('вы выиграли')
             window.location.reload()
-
         }
     }else if(playerInput.value == ''){
         alert('напиши букву')
     }
+    
     else{
         sum += 1
         missLetters.innerHTML += playerInput.value
